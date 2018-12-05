@@ -1,0 +1,40 @@
+
+//1. two empty arrays
+//2. loop through data gettng 'label' and 'open'
+//3. push each into own array
+//4. then use array in state
+
+this.setState({ someProperty: { ...this.state.someProperty, flag: false} });
+
+this.setState({chartData: {...this.state.datasets, labels: response.data}
+
+{
+  labels: [1, 2, 3, 4, 5],
+  datasets:[
+    {
+      label: 'x',
+      data: [
+      123,
+      456,
+      789,
+      198,
+      765
+      ],
+      boderColor:[
+        'rgba(1, 1, 1, 1, 1)'
+      ],
+       fill: false,
+       lineTension: 1
+    }
+  ]
+}
+
+.then(response => {
+  var labelArray = [];
+  for(let i = 0; i < response.data.length; i++){
+  labelArray.push(response.data[i].label);
+}
+  this.state.chartData.labels = labelArray;
+})
+
+<Route path="/charts/:company" component={({match}) => <Charts match={match} />}  />
